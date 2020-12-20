@@ -19,6 +19,17 @@ if (isset($_POST['newtodo'])) {
 
 //----------
 
+// UPDATE TO DO
+
+
+if ( isset($_POST['sendValue']) ) {
+    var_dump("Ca marcheee ???!! ");
+}
+
+
+//----------
+
+
 // SET IN HISTO
 
 if ( isset($_GET['setHisto'])) {

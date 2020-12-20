@@ -6,7 +6,7 @@ Todo list with php and mysql DB
 
 - update a todo
 
-- deadline
+- deadline ou prioité de 1 à 3
 
 - add img
 

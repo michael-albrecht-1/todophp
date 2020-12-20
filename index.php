@@ -1,3 +1,9 @@
+<?php
+// Call PHP Script from javascript
+
+$mydata='Variables declaration in PHP';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +12,13 @@
     <title>To do list</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>     
     <?php require "./include/header.php"; ?>         
     <main>
+
         <div class="container-md">
 
             <hr class="my-6">
@@ -18,7 +27,7 @@
                 <div class="col-md-6">
                     <form class="row row-cols-lg-auto g-3" action="index.php" method="post">
                         <div class="col-6" >
-                            <input class="form-control"  type="text" name="newtodo" placeholder="here write what to">
+                            <input class="form-control"  type="text" name="newtodo" placeholder="here write what you have to do">
                         </div>
                         <div class="col-5">
                             <button class="btn btn-primary" type="submit">New task</button>
@@ -30,7 +39,7 @@
             <hr class="my-6">
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" id="todoListDiv">
                    
                     <?php
 
@@ -40,7 +49,7 @@
                         
                         echo '<ul class="list-group">';
                         while ( $toDoList = $response->fetch() ) {
-                            echo "<li class=\"list-group-item alert alert-success d-flex justify-content-between\">";
+                            echo "<li class=\"list-group-item alert alert-success d-flex justify-content-between\" id=\"todo-{$toDoList['id']}'\">";
                                 
                                     echo "<div>{$toDoList['task']}</div>";
                                     echo "<div class=\"d-flex\">";
@@ -95,4 +104,5 @@
         </div>   
     </main>
 </body>
+<script src="script.js"></script>
 </html>
