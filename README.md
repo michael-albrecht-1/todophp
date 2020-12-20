@@ -1,5 +1,7 @@
 # Learn PHP with todo list
 
+Todo list with php and mysql DB
+
 ## TO DO
 
 - onglet histo
