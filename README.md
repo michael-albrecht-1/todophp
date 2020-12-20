@@ -4,10 +4,6 @@ Todo list with php and mysql DB
 
 ## TO DO
 
-- onglet histo
-
-- todo histo -> still todo
-
 - update a todo
 
 - deadline
@@ -15,6 +11,10 @@ Todo list with php and mysql DB
 - add img
 
 ## IMPLEMENTED
+
+- onglet histo
+
+- todo histo -> still todo
 
 - show todo list
   

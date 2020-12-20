@@ -12,7 +12,6 @@ if (isset($_POST['newtodo'])) {
         $erreur = "Veuillez renseigner une valeur";
     } else {
         $dateCreation = date("Y-m-d H:i:s");
-        var_dump($dateCreation);
         $task = $_POST['newtodo'];
         $db->exec("INSERT INTO todo(task, dateCreation, histo) VALUES ('$task', '$dateCreation', '0')");
     }
@@ -20,17 +19,23 @@ if (isset($_POST['newtodo'])) {
 
 //----------
 
-// SET IN ARCHIVE
+// SET IN HISTO
 
 if ( isset($_GET['setHisto'])) {
     $id = $_GET['setHisto'];
-    var_dump($id);
     $db->exec("UPDATE `todo` SET histo = '1' WHERE id='$id'");
-
 }
 
-
 //---------------
+
+// CANCEL HISTO
+
+if ( isset($_GET['cancelHisto'])) {
+    $id = $_GET['cancelHisto'];
+    $db->exec("UPDATE `todo` SET histo = '0' WHERE id='$id'");
+}
+
+//-------------
 
 
 // DELETE TO DO
