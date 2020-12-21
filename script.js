@@ -13,25 +13,20 @@ function updateTodo (clickedLi) {
     
     updateInput = document.createElement('input');
     updateInput.className = "form-control list-group-item";
-    updateInput.style.margin = "0 0 1em 0";
+    updateInput.style.margin = "0 0 1.2em 0";
+    updateInput.style.height = "3em";
     updateInput.value = clickedLi.firstChild.firstChild.textContent;
     updateInput.addEventListener('keyup', (e) => {
         if (e.keyCode === 13) {
-            const sendValue = updateInput.value;
   
-            $.post("./index.php", function(req) {
-                console.log(req);
-            })
 
             // trouver un moyen d'appeler la fonction PHP updateTodo($sendValue)
-            // https://www.w3schools.com/jquery/ajax_post.asp
+            // voir https://www.w3schools.com/jquery/ajax_post.asp
 
             $.post("index.php",
             {
-            value: sendValue
-            },
-            function(data,status){
-            alert("Data: " + data + "\nStatus: " + status);
+            value: updateInput.value,
+            id: clickedLi.id
             });
 
             // --------
@@ -41,11 +36,22 @@ function updateTodo (clickedLi) {
         }
     });
 
+    2
+    3
+    4
+    5
+    window.onload = function() {
+     
+        alert( "welcome" );
+     
+    };
     clickedLi.replaceWith(updateInput);
 
     
     // peut se faire avec content editable c'est plus facile !
 }
+
+
 
 
 

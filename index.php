@@ -49,7 +49,7 @@ $mydata='Variables declaration in PHP';
                         
                         echo '<ul class="list-group">';
                         while ( $toDoList = $response->fetch() ) {
-                            echo "<li class=\"list-group-item alert alert-success d-flex justify-content-between\" id=\"todo-{$toDoList['id']}'\">";
+                            echo "<li class=\"list-group-item alert alert-success d-flex justify-content-between\" id=\"{$toDoList['id']}'\">";
                                 
                                     echo "<div>{$toDoList['task']}</div>";
                                     echo "<div class=\"d-flex\">";

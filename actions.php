@@ -22,8 +22,12 @@ if (isset($_POST['newtodo'])) {
 // UPDATE TO DO
 
 
-if ( isset($_POST['sendValue']) ) {
-    var_dump("Ca marcheee ???!! ");
+if ( isset($_POST['value']) && isset($_POST['id'])) {
+    
+    $value = $_POST['value'];
+    $id = $_POST['id'];
+    var_dump("value : " . $value);
+    $db->exec("UPDATE todo SET task = '$value' WHERE id = '$id' ");
 }
 
 
