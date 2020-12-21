@@ -4,13 +4,13 @@ Todo list with php and mysql DB
 
 ## TO DO
 
-- update a todo
-
 - deadline ou prioité de 1 à 3
 
 - add img
 
 ## IMPLEMENTED
+
+- update a todo
 
 - onglet histo
 

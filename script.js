@@ -19,32 +19,17 @@ function updateTodo (clickedLi) {
     updateInput.addEventListener('keyup', (e) => {
         if (e.keyCode === 13) {
   
-
-            // trouver un moyen d'appeler la fonction PHP updateTodo($sendValue)
-            // voir https://www.w3schools.com/jquery/ajax_post.asp
-
             $.post("index.php",
             {
             value: updateInput.value,
             id: clickedLi.id
             });
 
-            // --------
-
             clickedLi.firstChild.firstChild.textContent = updateInput.value;
             updateInput.replaceWith(clickedLi);
         }
     });
 
-    2
-    3
-    4
-    5
-    window.onload = function() {
-     
-        alert( "welcome" );
-     
-    };
     clickedLi.replaceWith(updateInput);
 
     
